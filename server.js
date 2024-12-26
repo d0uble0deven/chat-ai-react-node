@@ -17,8 +17,8 @@ app.use((req, res, next) => {
   next();
 });
 
-// Serve static files from the React frontend
-const frontendPath = path.join(__dirname, "chat-ai-react/frontend/build");
+// Correct static file path
+const frontendPath = path.join(__dirname, "frontend/build");
 app.use(express.static(frontendPath));
 
 // API routes
