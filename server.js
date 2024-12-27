@@ -37,7 +37,7 @@ app.get("/api/health", (req, res) => {
 
 // Catch-all handler for React routing
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/build", "index.html"));
+  res.sendFile(path.join(__dirname, "app/build", "index.html")); // Updated path
 });
 
 // Start the server
