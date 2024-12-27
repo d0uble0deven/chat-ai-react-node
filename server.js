@@ -17,9 +17,8 @@ app.use((req, res, next) => {
   next();
 });
 
-// Correct static file path
-const frontendPath = path.join(__dirname, "frontend/build");
-app.use(express.static(frontendPath));
+// Serve static files from the React frontend
+app.use(express.static(path.join(__dirname, "app/build")));
 
 // API routes
 const perplexityRoute = require("./routes/Perplexity");
@@ -38,7 +37,7 @@ app.get("/api/health", (req, res) => {
 
 // Catch-all handler for React routing
 app.get("*", (req, res) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
+  res.sendFile(path.join(__dirname, "/build", "index.html"));
 });
 
 // Start the server
