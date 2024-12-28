@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Chat AI React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack application for chatting with an AI, built using React for the frontend and Express with Prisma for the backend.
 
-## Available Scripts
+### Deployed Application
 
-In the project directory, you can run:
+**Live Link**: [Chat AI React](https://secret-waters-32055-a87d6cb73364.herokuapp.com/)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- AI-driven chat functionality
+- RESTful API backend
+- Fully responsive frontend
+- Seeded Prisma database
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+- **Frontend**: React, Axios, Lucide Icons, React Icons
+- **Backend**: Express, Prisma, OpenAI API
+- **Database**: PostgreSQL (Hosted on Heroku)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup Instructions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- **Node.js**: v18 or higher
+- **PostgreSQL**: v12 or higher
+- **Heroku CLI**: To deploy or access Heroku services (optional for local development)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Backend Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clone the Repository**:
 
-## Learn More
+   ```bash
+   git clone <repository-url>
+   cd chat-ai-react
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Install Dependencies**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm install
+```
 
-### Code Splitting
+3. **Setup .env File: Create a .env file in the root directory with the following variables**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+DATABASE_URL=postgresql://<username>:<password>@localhost:5432/<database_name>
+OPENAI_API_KEY=<your_openai_api_key>
+```
 
-### Analyzing the Bundle Size
+4. **Run Prisma Migrations**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+npx prisma migrate dev
+```
 
-### Making a Progressive Web App
+5. **Seed the Database (optional)**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+npm run seed
+```
 
-### Advanced Configuration
+6. **Start the Backend**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+npm run dev
+```
 
-### Deployment
+The backend will be available at http://localhost:6002.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Frontend Setup
 
-### `npm run build` fails to minify
+1. **Navigate to the Frontend Directory**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+cd frontend
+```
+
+2. **Install Dependencies**:
+
+```
+npm install
+```
+
+3. **Start the Frontend**:
+
+```
+npm start
+```
+
+The frontend will be available at http://localhost:6001.
+
+### Project Structure
+
+chat-ai-react/
+├── prisma/ # Prisma schema and migration files
+├── routes/ # Express routes
+├── frontend/ # React frontend code
+├── .env # Environment variables (not committed to version control)
+├── server.js # Backend server entry point
+└── package.json # Backend dependencies and scripts
+
+### Deployment Notes
+
+- Database: Ensure the Heroku PostgreSQL add-on is properly configured with the correct DATABASE_URL in your Heroku app settings.
+- Prisma: Run npx prisma migrate deploy on your Heroku dyno to apply schema changes.
+- Environment Variables: Set OPENAI_API_KEY in your Heroku config variables.
