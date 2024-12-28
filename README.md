@@ -48,34 +48,34 @@ A full-stack application for chatting with an AI, built using React for the fron
 
 2. **Install Dependencies**:
 
-```
-npm install
-```
+   ```
+   npm install
+   ```
 
 3. **Setup .env File: Create a .env file in the root directory with the following variables**:
 
-```
-DATABASE_URL=postgresql://<username>:<password>@localhost:5432/<database_name>
-OPENAI_API_KEY=<your_openai_api_key>
-```
+   ```
+   DATABASE_URL=postgresql://<username>:<password>@localhost:5432/<database_name>
+   OPENAI_API_KEY=<your_openai_api_key>
+   ```
 
 4. **Run Prisma Migrations**:
 
-```
-npx prisma migrate dev
-```
+   ```
+   npx prisma migrate dev
+   ```
 
 5. **Seed the Database (optional)**:
 
-```
-npm run seed
-```
+   ```
+   npm run seed
+   ```
 
 6. **Start the Backend**:
 
-```
-npm run dev
-```
+   ```
+   npm run dev
+   ```
 
 The backend will be available at http://localhost:6002.
 
@@ -83,26 +83,27 @@ The backend will be available at http://localhost:6002.
 
 1. **Navigate to the Frontend Directory**:
 
-```
-cd frontend
-```
+   ```
+   cd frontend
+   ```
 
 2. **Install Dependencies**:
 
-```
-npm install
-```
+   ```
+   npm install
+   ```
 
 3. **Start the Frontend**:
 
-```
-npm start
-```
+   ```
+   npm start
+   ```
 
 The frontend will be available at http://localhost:6001.
 
 ### Project Structure
 
+```
 chat-ai-react/
 ├── prisma/ # Prisma schema and migration files
 ├── routes/ # Express routes
@@ -110,6 +111,7 @@ chat-ai-react/
 ├── .env # Environment variables (not committed to version control)
 ├── server.js # Backend server entry point
 └── package.json # Backend dependencies and scripts
+```
 
 ### Deployment Notes
 
